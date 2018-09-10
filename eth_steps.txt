@@ -1,0 +1,13 @@
+INIT
+1. truffle init
+2. truffle compile
+3. truffle develop
+4. (truffle) migrate (--reset)
+
+DEBUG
+1. truffle debug (tx-id)
+
+RECOMPILE & DEPLOY
+1. truffle compile --all
+2. truffle migrate --reset
+
