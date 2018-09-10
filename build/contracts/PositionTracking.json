@@ -1,0 +1,960 @@
+{
+  "contractName": "PositionTracking",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "pos_x",
+          "type": "uint256"
+        },
+        {
+          "name": "pos_y",
+          "type": "uint256"
+        }
+      ],
+      "name": "setRandomPosition",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x60806040526040805190810160405280600081526020016000815250600080820151816000015560208201518160010155505034801561003e57600080fd5b5060ed8061004d6000396000f300608060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680633b0095bb146044575b600080fd5b348015604f57600080fd5b5060766004803603810190808035906020019092919080359060200190929190505050608c565b6040518082815260200191505060405180910390f35b6000604080519081016040528084815260200183815250600080820151816000015560208201518160010155905050929150505600a165627a7a72305820685f9d61f4df998047db148f7844e70fb6cf76e5f79383ad371b5603942375a40029",
+  "deployedBytecode": "0x608060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680633b0095bb146044575b600080fd5b348015604f57600080fd5b5060766004803603810190808035906020019092919080359060200190929190505050608c565b6040518082815260200191505060405180910390f35b6000604080519081016040528084815260200183815250600080820151816000015560208201518160010155905050929150505600a165627a7a72305820685f9d61f4df998047db148f7844e70fb6cf76e5f79383ad371b5603942375a40029",
+  "sourceMap": "62:320:0:-;;;177:21;;;;;;;;;190:1;177:21;;;;195:1;177:21;;;155:43;;;;;;;;;;;;;;;;;;;62:320;8:9:-1;5:2;;;30:1;27;20:12;5:2;62:320:0;;;;;;;",
+  "deployedSourceMap": "62:320:0:-;;;;;;;;;;;;;;;;;;;;;;;;247:133;;8:9:-1;5:2;;;30:1;27;20:12;5:2;247:133:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;315:4;344:29;;;;;;;;;357:5;344:29;;;;366:5;344:29;;;331:10;:42;;;;;;;;;;;;;;;;;;;247:133;;;;:::o",
+  "source": "pragma solidity ^0.4.17;\n//pragma experimental ABIEncoderV2;\n\ncontract PositionTracking {\n    struct position {\n        uint x;\n        uint y;\n    }\n\n    position currentPos = position ({x:0, y:0});\n\n    mapping (address => position) route;\n\n    function setRandomPosition (uint pos_x, uint pos_y) public returns (uint) {\n        currentPos = position ({x:pos_x, y:pos_y});\n    }\n}",
+  "sourcePath": "/home/telekom/eth_projects/tracking_chain/contracts/Tracking.sol",
+  "ast": {
+    "absolutePath": "/home/telekom/eth_projects/tracking_chain/contracts/Tracking.sol",
+    "exportedSymbols": {
+      "PositionTracking": [
+        34
+      ]
+    },
+    "id": 35,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 34,
+        "linearizedBaseContracts": [
+          34
+        ],
+        "name": "PositionTracking",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "PositionTracking.position",
+            "id": 6,
+            "members": [
+              {
+                "constant": false,
+                "id": 3,
+                "name": "x",
+                "nodeType": "VariableDeclaration",
+                "scope": 6,
+                "src": "120:6:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 2,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "120:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 5,
+                "name": "y",
+                "nodeType": "VariableDeclaration",
+                "scope": 6,
+                "src": "136:6:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 4,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "136:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "position",
+            "nodeType": "StructDefinition",
+            "scope": 34,
+            "src": "94:55:0",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 12,
+            "name": "currentPos",
+            "nodeType": "VariableDeclaration",
+            "scope": 34,
+            "src": "155:43:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_struct$_position_$6_storage",
+              "typeString": "struct PositionTracking.position"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 7,
+              "name": "position",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 6,
+              "src": "155:8:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_position_$6_storage_ptr",
+                "typeString": "struct PositionTracking.position"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "arguments": [
+                {
+                  "argumentTypes": null,
+                  "hexValue": "30",
+                  "id": 9,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "kind": "number",
+                  "lValueRequested": false,
+                  "nodeType": "Literal",
+                  "src": "190:1:0",
+                  "subdenomination": null,
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_rational_0_by_1",
+                    "typeString": "int_const 0"
+                  },
+                  "value": "0"
+                },
+                {
+                  "argumentTypes": null,
+                  "hexValue": "30",
+                  "id": 10,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "kind": "number",
+                  "lValueRequested": false,
+                  "nodeType": "Literal",
+                  "src": "195:1:0",
+                  "subdenomination": null,
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_rational_0_by_1",
+                    "typeString": "int_const 0"
+                  },
+                  "value": "0"
+                }
+              ],
+              "expression": {
+                "argumentTypes": null,
+                "id": 8,
+                "name": "position",
+                "nodeType": "Identifier",
+                "overloadedDeclarations": [],
+                "referencedDeclaration": 6,
+                "src": "177:8:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_type$_t_struct$_position_$6_storage_ptr_$",
+                  "typeString": "type(struct PositionTracking.position storage pointer)"
+                }
+              },
+              "id": 11,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "structConstructorCall",
+              "lValueRequested": false,
+              "names": [
+                "x",
+                "y"
+              ],
+              "nodeType": "FunctionCall",
+              "src": "177:21:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_position_$6_memory",
+                "typeString": "struct PositionTracking.position memory"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 16,
+            "name": "route",
+            "nodeType": "VariableDeclaration",
+            "scope": 34,
+            "src": "205:35:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_position_$6_storage_$",
+              "typeString": "mapping(address => struct PositionTracking.position)"
+            },
+            "typeName": {
+              "id": 15,
+              "keyType": {
+                "id": 13,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "214:7:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "205:29:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_position_$6_storage_$",
+                "typeString": "mapping(address => struct PositionTracking.position)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 14,
+                "name": "position",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 6,
+                "src": "225:8:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_position_$6_storage_ptr",
+                  "typeString": "struct PositionTracking.position"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 32,
+              "nodeType": "Block",
+              "src": "321:59:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 30,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 25,
+                      "name": "currentPos",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 12,
+                      "src": "331:10:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_position_$6_storage",
+                        "typeString": "struct PositionTracking.position storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 27,
+                          "name": "pos_x",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 18,
+                          "src": "357:5:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 28,
+                          "name": "pos_y",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 20,
+                          "src": "366:5:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 26,
+                        "name": "position",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6,
+                        "src": "344:8:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_struct$_position_$6_storage_ptr_$",
+                          "typeString": "type(struct PositionTracking.position storage pointer)"
+                        }
+                      },
+                      "id": 29,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "structConstructorCall",
+                      "lValueRequested": false,
+                      "names": [
+                        "x",
+                        "y"
+                      ],
+                      "nodeType": "FunctionCall",
+                      "src": "344:29:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_position_$6_memory",
+                        "typeString": "struct PositionTracking.position memory"
+                      }
+                    },
+                    "src": "331:42:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_position_$6_storage",
+                      "typeString": "struct PositionTracking.position storage ref"
+                    }
+                  },
+                  "id": 31,
+                  "nodeType": "ExpressionStatement",
+                  "src": "331:42:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 33,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "setRandomPosition",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 21,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 18,
+                  "name": "pos_x",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 33,
+                  "src": "275:10:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 17,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "275:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 20,
+                  "name": "pos_y",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 33,
+                  "src": "287:10:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 19,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "287:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "274:24:0"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 24,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 23,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 33,
+                  "src": "315:4:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 22,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "315:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "314:6:0"
+            },
+            "scope": 34,
+            "src": "247:133:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 35,
+        "src": "62:320:0"
+      }
+    ],
+    "src": "0:382:0"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/telekom/eth_projects/tracking_chain/contracts/Tracking.sol",
+    "exportedSymbols": {
+      "PositionTracking": [
+        34
+      ]
+    },
+    "id": 35,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 34,
+        "linearizedBaseContracts": [
+          34
+        ],
+        "name": "PositionTracking",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "PositionTracking.position",
+            "id": 6,
+            "members": [
+              {
+                "constant": false,
+                "id": 3,
+                "name": "x",
+                "nodeType": "VariableDeclaration",
+                "scope": 6,
+                "src": "120:6:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 2,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "120:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 5,
+                "name": "y",
+                "nodeType": "VariableDeclaration",
+                "scope": 6,
+                "src": "136:6:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 4,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "136:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "position",
+            "nodeType": "StructDefinition",
+            "scope": 34,
+            "src": "94:55:0",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 12,
+            "name": "currentPos",
+            "nodeType": "VariableDeclaration",
+            "scope": 34,
+            "src": "155:43:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_struct$_position_$6_storage",
+              "typeString": "struct PositionTracking.position"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 7,
+              "name": "position",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 6,
+              "src": "155:8:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_position_$6_storage_ptr",
+                "typeString": "struct PositionTracking.position"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "arguments": [
+                {
+                  "argumentTypes": null,
+                  "hexValue": "30",
+                  "id": 9,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "kind": "number",
+                  "lValueRequested": false,
+                  "nodeType": "Literal",
+                  "src": "190:1:0",
+                  "subdenomination": null,
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_rational_0_by_1",
+                    "typeString": "int_const 0"
+                  },
+                  "value": "0"
+                },
+                {
+                  "argumentTypes": null,
+                  "hexValue": "30",
+                  "id": 10,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "kind": "number",
+                  "lValueRequested": false,
+                  "nodeType": "Literal",
+                  "src": "195:1:0",
+                  "subdenomination": null,
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_rational_0_by_1",
+                    "typeString": "int_const 0"
+                  },
+                  "value": "0"
+                }
+              ],
+              "expression": {
+                "argumentTypes": null,
+                "id": 8,
+                "name": "position",
+                "nodeType": "Identifier",
+                "overloadedDeclarations": [],
+                "referencedDeclaration": 6,
+                "src": "177:8:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_type$_t_struct$_position_$6_storage_ptr_$",
+                  "typeString": "type(struct PositionTracking.position storage pointer)"
+                }
+              },
+              "id": 11,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "structConstructorCall",
+              "lValueRequested": false,
+              "names": [
+                "x",
+                "y"
+              ],
+              "nodeType": "FunctionCall",
+              "src": "177:21:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_struct$_position_$6_memory",
+                "typeString": "struct PositionTracking.position memory"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 16,
+            "name": "route",
+            "nodeType": "VariableDeclaration",
+            "scope": 34,
+            "src": "205:35:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_position_$6_storage_$",
+              "typeString": "mapping(address => struct PositionTracking.position)"
+            },
+            "typeName": {
+              "id": 15,
+              "keyType": {
+                "id": 13,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "214:7:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "205:29:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_position_$6_storage_$",
+                "typeString": "mapping(address => struct PositionTracking.position)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 14,
+                "name": "position",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 6,
+                "src": "225:8:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_position_$6_storage_ptr",
+                  "typeString": "struct PositionTracking.position"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 32,
+              "nodeType": "Block",
+              "src": "321:59:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 30,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 25,
+                      "name": "currentPos",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 12,
+                      "src": "331:10:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_position_$6_storage",
+                        "typeString": "struct PositionTracking.position storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 27,
+                          "name": "pos_x",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 18,
+                          "src": "357:5:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 28,
+                          "name": "pos_y",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 20,
+                          "src": "366:5:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 26,
+                        "name": "position",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6,
+                        "src": "344:8:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_struct$_position_$6_storage_ptr_$",
+                          "typeString": "type(struct PositionTracking.position storage pointer)"
+                        }
+                      },
+                      "id": 29,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "structConstructorCall",
+                      "lValueRequested": false,
+                      "names": [
+                        "x",
+                        "y"
+                      ],
+                      "nodeType": "FunctionCall",
+                      "src": "344:29:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_position_$6_memory",
+                        "typeString": "struct PositionTracking.position memory"
+                      }
+                    },
+                    "src": "331:42:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_position_$6_storage",
+                      "typeString": "struct PositionTracking.position storage ref"
+                    }
+                  },
+                  "id": 31,
+                  "nodeType": "ExpressionStatement",
+                  "src": "331:42:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 33,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "setRandomPosition",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 21,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 18,
+                  "name": "pos_x",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 33,
+                  "src": "275:10:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 17,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "275:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 20,
+                  "name": "pos_y",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 33,
+                  "src": "287:10:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 19,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "287:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "274:24:0"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 24,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 23,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 33,
+                  "src": "315:4:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 22,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "315:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "314:6:0"
+            },
+            "scope": 34,
+            "src": "247:133:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 35,
+        "src": "62:320:0"
+      }
+    ],
+    "src": "0:382:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {
+    "4447": {
+      "events": {},
+      "links": {},
+      "address": "0xf12b5dd4ead5f743c6baa640b0216200e89b60da",
+      "transactionHash": "0x3d221aba917b66de7ba60fbbfd124aef5fad1f3957b249f90a07516051afc3a1"
+    }
+  },
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2018-09-10T11:02:34.426Z"
+}
