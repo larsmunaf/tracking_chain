@@ -25,7 +25,7 @@ module.exports = function (callback){
     accounts = web3.eth.getAccounts ()
     .then (function (accounts) {
         account = accounts[0];
-        //web3.eth.defaultAccount = account
+        console.log (web3.eth.defaultAccount = account);
     })
     .then (TrackingContract.deployed)
     .then (function (instance) {
@@ -41,6 +41,6 @@ module.exports = function (callback){
     });
 }
 
-//module.exports();
+module.exports();
 
 
