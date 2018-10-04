@@ -8,7 +8,7 @@ contract PositionTracking {
         uint y;
     }
 
-    event PositionValue(address indexed _from, uint _value);
+    event PositionValue(address indexed _from, uint _value_x, uint _value_y);
 
     position public currentPos = position ({x:0, y:0});
 
@@ -16,6 +16,6 @@ contract PositionTracking {
 
     function setRandomPosition (uint pos_x, uint pos_y) public returns (uint) {
         currentPos = position ({x:pos_x, y:pos_y});
-        emit PositionValue(msg.sender, pos_x);
+        emit PositionValue(msg.sender, pos_x, pos_y);
     }
 }

@@ -29,7 +29,12 @@
         },
         {
           "indexed": false,
-          "name": "_value",
+          "name": "_value_x",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "_value_y",
           "type": "uint256"
         }
       ],
@@ -60,20 +65,20 @@
       "type": "function"
     }
   ],
-  "bytecode": "0x60806040526040805190810160405280600081526020016000815250600080820151816000015560208201518160010155505034801561003e57600080fd5b5061018f8061004e6000396000f30060806040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680633b0095bb146100515780639f776b6a1461009c575b600080fd5b34801561005d57600080fd5b5061008660048036038101908080359060200190929190803590602001909291905050506100ce565b6040518082815260200191505060405180910390f35b3480156100a857600080fd5b506100b1610151565b604051808381526020018281526020019250505060405180910390f35b60006040805190810160405280848152602001838152506000808201518160000155602082015181600101559050503373ffffffffffffffffffffffffffffffffffffffff167f787e37a190aadb004877c540bd2ac0da161edd3936875ae6b507b73a2e0edaec846040518082815260200191505060405180910390a292915050565b600080600001549080600101549050825600a165627a7a72305820b1c61f8968c40445f9997fa3804a07b05e7b811c349701ad2b35e6790cf0aae60029",
-  "deployedBytecode": "0x60806040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680633b0095bb146100515780639f776b6a1461009c575b600080fd5b34801561005d57600080fd5b5061008660048036038101908080359060200190929190803590602001909291905050506100ce565b6040518082815260200191505060405180910390f35b3480156100a857600080fd5b506100b1610151565b604051808381526020018281526020019250505060405180910390f35b60006040805190810160405280848152602001838152506000808201518160000155602082015181600101559050503373ffffffffffffffffffffffffffffffffffffffff167f787e37a190aadb004877c540bd2ac0da161edd3936875ae6b507b73a2e0edaec846040518082815260200191505060405180910390a292915050565b600080600001549080600101549050825600a165627a7a72305820b1c61f8968c40445f9997fa3804a07b05e7b811c349701ad2b35e6790cf0aae60029",
-  "sourceMap": "62:430:0:-;;;247:21;;;;;;;;;260:1;247:21;;;;265:1;247:21;;;218:50;;;;;;;;;;;;;;;;;;;62:430;8:9:-1;5:2;;;30:1;27;20:12;5:2;62:430:0;;;;;;;",
-  "deployedSourceMap": "62:430:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;317:173;;8:9:-1;5:2;;;30:1;27;20:12;5:2;317:173:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;218:50;;8:9:-1;5:2;;;30:1;27;20:12;5:2;218:50:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;317:173;385:4;414:29;;;;;;;;;427:5;414:29;;;;436:5;414:29;;;401:10;:42;;;;;;;;;;;;;;;;;;;465:10;451:32;;;477:5;451:32;;;;;;;;;;;;;;;;;;317:173;;;;:::o;218:50::-;;;;;;;;;;;;;;:::o",
-  "source": "pragma solidity ^0.4.17;\n//pragma experimental ABIEncoderV2;\n\ncontract PositionTracking {\n\n    struct position {\n        uint x;\n        uint y;\n    }\n\n    event PositionValue(address indexed _from, uint _value);\n\n    position public currentPos = position ({x:0, y:0});\n\n    mapping (address => position) route;\n\n    function setRandomPosition (uint pos_x, uint pos_y) public returns (uint) {\n        currentPos = position ({x:pos_x, y:pos_y});\n\temit PositionValue(msg.sender, pos_x);\n    }\n}\n",
+  "bytecode": "0x60806040526040805190810160405280600081526020016000815250600080820151816000015560208201518160010155505034801561003e57600080fd5b506101978061004e6000396000f30060806040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680633b0095bb146100515780639f776b6a1461009c575b600080fd5b34801561005d57600080fd5b5061008660048036038101908080359060200190929190803590602001909291905050506100ce565b6040518082815260200191505060405180910390f35b3480156100a857600080fd5b506100b1610159565b604051808381526020018281526020019250505060405180910390f35b60006040805190810160405280848152602001838152506000808201518160000155602082015181600101559050503373ffffffffffffffffffffffffffffffffffffffff167f1ee3359ebd21fb6b9bba2d08aac3c42a48251032db3d194f3f7356e1a837e3888484604051808381526020018281526020019250505060405180910390a292915050565b600080600001549080600101549050825600a165627a7a723058203d138cc6198a1b1e1a381cc8c79e20daff89c9c73b5d5c1825c2500cfb0c61960029",
+  "deployedBytecode": "0x60806040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680633b0095bb146100515780639f776b6a1461009c575b600080fd5b34801561005d57600080fd5b5061008660048036038101908080359060200190929190803590602001909291905050506100ce565b6040518082815260200191505060405180910390f35b3480156100a857600080fd5b506100b1610159565b604051808381526020018281526020019250505060405180910390f35b60006040805190810160405280848152602001838152506000808201518160000155602082015181600101559050503373ffffffffffffffffffffffffffffffffffffffff167f1ee3359ebd21fb6b9bba2d08aac3c42a48251032db3d194f3f7356e1a837e3888484604051808381526020018281526020019250505060405180910390a292915050565b600080600001549080600101549050825600a165627a7a723058203d138cc6198a1b1e1a381cc8c79e20daff89c9c73b5d5c1825c2500cfb0c61960029",
+  "sourceMap": "62:461:0:-;;;264:21;;;;;;;;;277:1;264:21;;;;282:1;264:21;;;235:50;;;;;;;;;;;;;;;;;;;62:461;8:9:-1;5:2;;;30:1;27;20:12;5:2;62:461:0;;;;;;;",
+  "deployedSourceMap": "62:461:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;334:187;;8:9:-1;5:2;;;30:1;27;20:12;5:2;334:187:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;235:50;;8:9:-1;5:2;;;30:1;27;20:12;5:2;235:50:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;334:187;402:4;431:29;;;;;;;;;444:5;431:29;;;;453:5;431:29;;;418:10;:42;;;;;;;;;;;;;;;;;;;489:10;475:39;;;501:5;508;475:39;;;;;;;;;;;;;;;;;;;;;;;;334:187;;;;:::o;235:50::-;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.4.17;\n//pragma experimental ABIEncoderV2;\n\ncontract PositionTracking {\n\n    struct position {\n        uint x;\n        uint y;\n    }\n\n    event PositionValue(address indexed _from, uint _value_x, uint _value_y);\n\n    position public currentPos = position ({x:0, y:0});\n\n    mapping (address => position) route;\n\n    function setRandomPosition (uint pos_x, uint pos_y) public returns (uint) {\n        currentPos = position ({x:pos_x, y:pos_y});\n        emit PositionValue(msg.sender, pos_x, pos_y);\n    }\n}\n",
   "sourcePath": "/home/telekom/eth_projects/tracking_chain/contracts/Tracking.sol",
   "ast": {
     "absolutePath": "/home/telekom/eth_projects/tracking_chain/contracts/Tracking.sol",
     "exportedSymbols": {
       "PositionTracking": [
-        46
+        49
       ]
     },
-    "id": 47,
+    "id": 50,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -93,9 +98,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 46,
+        "id": 49,
         "linearizedBaseContracts": [
-          46
+          49
         ],
         "name": "PositionTracking",
         "nodeType": "ContractDefinition",
@@ -159,18 +164,18 @@
             ],
             "name": "position",
             "nodeType": "StructDefinition",
-            "scope": 46,
+            "scope": 49,
             "src": "95:55:0",
             "visibility": "public"
           },
           {
             "anonymous": false,
             "documentation": null,
-            "id": 12,
+            "id": 14,
             "name": "PositionValue",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 11,
+              "id": 13,
               "nodeType": "ParameterList",
               "parameters": [
                 {
@@ -179,7 +184,7 @@
                   "indexed": true,
                   "name": "_from",
                   "nodeType": "VariableDeclaration",
-                  "scope": 12,
+                  "scope": 14,
                   "src": "176:21:0",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -204,10 +209,10 @@
                   "constant": false,
                   "id": 10,
                   "indexed": false,
-                  "name": "_value",
+                  "name": "_value_x",
                   "nodeType": "VariableDeclaration",
-                  "scope": 12,
-                  "src": "199:11:0",
+                  "scope": 14,
+                  "src": "199:13:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -226,19 +231,46 @@
                   },
                   "value": null,
                   "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 12,
+                  "indexed": false,
+                  "name": "_value_y",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14,
+                  "src": "214:13:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 11,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "214:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
                 }
               ],
-              "src": "175:36:0"
+              "src": "175:53:0"
             },
-            "src": "156:56:0"
+            "src": "156:73:0"
           },
           {
             "constant": false,
-            "id": 18,
+            "id": 20,
             "name": "currentPos",
             "nodeType": "VariableDeclaration",
-            "scope": 46,
-            "src": "218:50:0",
+            "scope": 49,
+            "src": "235:50:0",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -247,11 +279,11 @@
             },
             "typeName": {
               "contractScope": null,
-              "id": 13,
+              "id": 15,
               "name": "position",
               "nodeType": "UserDefinedTypeName",
               "referencedDeclaration": 6,
-              "src": "218:8:0",
+              "src": "235:8:0",
               "typeDescriptions": {
                 "typeIdentifier": "t_struct$_position_$6_storage_ptr",
                 "typeString": "struct PositionTracking.position"
@@ -263,14 +295,14 @@
                 {
                   "argumentTypes": null,
                   "hexValue": "30",
-                  "id": 15,
+                  "id": 17,
                   "isConstant": false,
                   "isLValue": false,
                   "isPure": true,
                   "kind": "number",
                   "lValueRequested": false,
                   "nodeType": "Literal",
-                  "src": "260:1:0",
+                  "src": "277:1:0",
                   "subdenomination": null,
                   "typeDescriptions": {
                     "typeIdentifier": "t_rational_0_by_1",
@@ -281,14 +313,14 @@
                 {
                   "argumentTypes": null,
                   "hexValue": "30",
-                  "id": 16,
+                  "id": 18,
                   "isConstant": false,
                   "isLValue": false,
                   "isPure": true,
                   "kind": "number",
                   "lValueRequested": false,
                   "nodeType": "Literal",
-                  "src": "265:1:0",
+                  "src": "282:1:0",
                   "subdenomination": null,
                   "typeDescriptions": {
                     "typeIdentifier": "t_rational_0_by_1",
@@ -299,18 +331,18 @@
               ],
               "expression": {
                 "argumentTypes": null,
-                "id": 14,
+                "id": 16,
                 "name": "position",
                 "nodeType": "Identifier",
                 "overloadedDeclarations": [],
                 "referencedDeclaration": 6,
-                "src": "247:8:0",
+                "src": "264:8:0",
                 "typeDescriptions": {
                   "typeIdentifier": "t_type$_t_struct$_position_$6_storage_ptr_$",
                   "typeString": "type(struct PositionTracking.position storage pointer)"
                 }
               },
-              "id": 17,
+              "id": 19,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -321,7 +353,7 @@
                 "y"
               ],
               "nodeType": "FunctionCall",
-              "src": "247:21:0",
+              "src": "264:21:0",
               "typeDescriptions": {
                 "typeIdentifier": "t_struct$_position_$6_memory",
                 "typeString": "struct PositionTracking.position memory"
@@ -331,11 +363,11 @@
           },
           {
             "constant": false,
-            "id": 22,
+            "id": 24,
             "name": "route",
             "nodeType": "VariableDeclaration",
-            "scope": 46,
-            "src": "275:35:0",
+            "scope": 49,
+            "src": "292:35:0",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -343,30 +375,30 @@
               "typeString": "mapping(address => struct PositionTracking.position)"
             },
             "typeName": {
-              "id": 21,
+              "id": 23,
               "keyType": {
-                "id": 19,
+                "id": 21,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
-                "src": "284:7:0",
+                "src": "301:7:0",
                 "typeDescriptions": {
                   "typeIdentifier": "t_address",
                   "typeString": "address"
                 }
               },
               "nodeType": "Mapping",
-              "src": "275:29:0",
+              "src": "292:29:0",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_address_$_t_struct$_position_$6_storage_$",
                 "typeString": "mapping(address => struct PositionTracking.position)"
               },
               "valueType": {
                 "contractScope": null,
-                "id": 20,
+                "id": 22,
                 "name": "position",
                 "nodeType": "UserDefinedTypeName",
                 "referencedDeclaration": 6,
-                "src": "295:8:0",
+                "src": "312:8:0",
                 "typeDescriptions": {
                   "typeIdentifier": "t_struct$_position_$6_storage_ptr",
                   "typeString": "struct PositionTracking.position"
@@ -378,26 +410,26 @@
           },
           {
             "body": {
-              "id": 44,
+              "id": 47,
               "nodeType": "Block",
-              "src": "391:99:0",
+              "src": "408:113:0",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 36,
+                    "id": 38,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 31,
+                      "id": 33,
                       "name": "currentPos",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 18,
-                      "src": "401:10:0",
+                      "referencedDeclaration": 20,
+                      "src": "418:10:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_struct$_position_$6_storage",
                         "typeString": "struct PositionTracking.position storage ref"
@@ -410,12 +442,12 @@
                       "arguments": [
                         {
                           "argumentTypes": null,
-                          "id": 33,
+                          "id": 35,
                           "name": "pos_x",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 24,
-                          "src": "427:5:0",
+                          "referencedDeclaration": 26,
+                          "src": "444:5:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -423,12 +455,12 @@
                         },
                         {
                           "argumentTypes": null,
-                          "id": 34,
+                          "id": 36,
                           "name": "pos_y",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 26,
-                          "src": "436:5:0",
+                          "referencedDeclaration": 28,
+                          "src": "453:5:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -437,18 +469,18 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 32,
+                        "id": 34,
                         "name": "position",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 6,
-                        "src": "414:8:0",
+                        "src": "431:8:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_type$_t_struct$_position_$6_storage_ptr_$",
                           "typeString": "type(struct PositionTracking.position storage pointer)"
                         }
                       },
-                      "id": 35,
+                      "id": 37,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -459,21 +491,21 @@
                         "y"
                       ],
                       "nodeType": "FunctionCall",
-                      "src": "414:29:0",
+                      "src": "431:29:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_struct$_position_$6_memory",
                         "typeString": "struct PositionTracking.position memory"
                       }
                     },
-                    "src": "401:42:0",
+                    "src": "418:42:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_struct$_position_$6_storage",
                       "typeString": "struct PositionTracking.position storage ref"
                     }
                   },
-                  "id": 37,
+                  "id": 39,
                   "nodeType": "ExpressionStatement",
-                  "src": "401:42:0"
+                  "src": "418:42:0"
                 },
                 {
                   "eventCall": {
@@ -483,18 +515,18 @@
                         "argumentTypes": null,
                         "expression": {
                           "argumentTypes": null,
-                          "id": 39,
+                          "id": 41,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 61,
-                          "src": "465:3:0",
+                          "referencedDeclaration": 64,
+                          "src": "489:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
                           }
                         },
-                        "id": 40,
+                        "id": 42,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -502,7 +534,7 @@
                         "memberName": "sender",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": null,
-                        "src": "465:10:0",
+                        "src": "489:10:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -510,12 +542,25 @@
                       },
                       {
                         "argumentTypes": null,
-                        "id": 41,
+                        "id": 43,
                         "name": "pos_x",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 24,
-                        "src": "477:5:0",
+                        "referencedDeclaration": 26,
+                        "src": "501:5:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 44,
+                        "name": "pos_y",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 28,
+                        "src": "508:5:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -531,20 +576,24 @@
                         {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
                         }
                       ],
-                      "id": 38,
+                      "id": 40,
                       "name": "PositionValue",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 12,
-                      "src": "451:13:0",
+                      "referencedDeclaration": 14,
+                      "src": "475:13:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_uint256_$returns$__$",
-                        "typeString": "function (address,uint256)"
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_uint256_$_t_uint256_$returns$__$",
+                        "typeString": "function (address,uint256,uint256)"
                       }
                     },
-                    "id": 42,
+                    "id": 45,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -552,20 +601,20 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "451:32:0",
+                    "src": "475:39:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 43,
+                  "id": 46,
                   "nodeType": "EmitStatement",
-                  "src": "446:37:0"
+                  "src": "470:44:0"
                 }
               ]
             },
             "documentation": null,
-            "id": 45,
+            "id": 48,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -573,42 +622,16 @@
             "name": "setRandomPosition",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 27,
+              "id": 29,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 24,
+                  "id": 26,
                   "name": "pos_x",
                   "nodeType": "VariableDeclaration",
-                  "scope": 45,
-                  "src": "345:10:0",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  },
-                  "typeName": {
-                    "id": 23,
-                    "name": "uint",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "345:4:0",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 26,
-                  "name": "pos_y",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 45,
-                  "src": "357:10:0",
+                  "scope": 48,
+                  "src": "362:10:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -619,7 +642,7 @@
                     "id": 25,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "357:4:0",
+                    "src": "362:4:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -627,22 +650,14 @@
                   },
                   "value": null,
                   "visibility": "internal"
-                }
-              ],
-              "src": "344:24:0"
-            },
-            "payable": false,
-            "returnParameters": {
-              "id": 30,
-              "nodeType": "ParameterList",
-              "parameters": [
+                },
                 {
                   "constant": false,
-                  "id": 29,
-                  "name": "",
+                  "id": 28,
+                  "name": "pos_y",
                   "nodeType": "VariableDeclaration",
-                  "scope": 45,
-                  "src": "385:4:0",
+                  "scope": 48,
+                  "src": "374:10:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -650,10 +665,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 28,
+                    "id": 27,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "385:4:0",
+                    "src": "374:4:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -663,29 +678,63 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "384:6:0"
+              "src": "361:24:0"
             },
-            "scope": 46,
-            "src": "317:173:0",
+            "payable": false,
+            "returnParameters": {
+              "id": 32,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 31,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 48,
+                  "src": "402:4:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 30,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "402:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "401:6:0"
+            },
+            "scope": 49,
+            "src": "334:187:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 47,
-        "src": "62:430:0"
+        "scope": 50,
+        "src": "62:461:0"
       }
     ],
-    "src": "0:493:0"
+    "src": "0:524:0"
   },
   "legacyAST": {
     "absolutePath": "/home/telekom/eth_projects/tracking_chain/contracts/Tracking.sol",
     "exportedSymbols": {
       "PositionTracking": [
-        46
+        49
       ]
     },
-    "id": 47,
+    "id": 50,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -705,9 +754,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 46,
+        "id": 49,
         "linearizedBaseContracts": [
-          46
+          49
         ],
         "name": "PositionTracking",
         "nodeType": "ContractDefinition",
@@ -771,18 +820,18 @@
             ],
             "name": "position",
             "nodeType": "StructDefinition",
-            "scope": 46,
+            "scope": 49,
             "src": "95:55:0",
             "visibility": "public"
           },
           {
             "anonymous": false,
             "documentation": null,
-            "id": 12,
+            "id": 14,
             "name": "PositionValue",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 11,
+              "id": 13,
               "nodeType": "ParameterList",
               "parameters": [
                 {
@@ -791,7 +840,7 @@
                   "indexed": true,
                   "name": "_from",
                   "nodeType": "VariableDeclaration",
-                  "scope": 12,
+                  "scope": 14,
                   "src": "176:21:0",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -816,10 +865,10 @@
                   "constant": false,
                   "id": 10,
                   "indexed": false,
-                  "name": "_value",
+                  "name": "_value_x",
                   "nodeType": "VariableDeclaration",
-                  "scope": 12,
-                  "src": "199:11:0",
+                  "scope": 14,
+                  "src": "199:13:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -838,19 +887,46 @@
                   },
                   "value": null,
                   "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 12,
+                  "indexed": false,
+                  "name": "_value_y",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14,
+                  "src": "214:13:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 11,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "214:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
                 }
               ],
-              "src": "175:36:0"
+              "src": "175:53:0"
             },
-            "src": "156:56:0"
+            "src": "156:73:0"
           },
           {
             "constant": false,
-            "id": 18,
+            "id": 20,
             "name": "currentPos",
             "nodeType": "VariableDeclaration",
-            "scope": 46,
-            "src": "218:50:0",
+            "scope": 49,
+            "src": "235:50:0",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -859,11 +935,11 @@
             },
             "typeName": {
               "contractScope": null,
-              "id": 13,
+              "id": 15,
               "name": "position",
               "nodeType": "UserDefinedTypeName",
               "referencedDeclaration": 6,
-              "src": "218:8:0",
+              "src": "235:8:0",
               "typeDescriptions": {
                 "typeIdentifier": "t_struct$_position_$6_storage_ptr",
                 "typeString": "struct PositionTracking.position"
@@ -875,14 +951,14 @@
                 {
                   "argumentTypes": null,
                   "hexValue": "30",
-                  "id": 15,
+                  "id": 17,
                   "isConstant": false,
                   "isLValue": false,
                   "isPure": true,
                   "kind": "number",
                   "lValueRequested": false,
                   "nodeType": "Literal",
-                  "src": "260:1:0",
+                  "src": "277:1:0",
                   "subdenomination": null,
                   "typeDescriptions": {
                     "typeIdentifier": "t_rational_0_by_1",
@@ -893,14 +969,14 @@
                 {
                   "argumentTypes": null,
                   "hexValue": "30",
-                  "id": 16,
+                  "id": 18,
                   "isConstant": false,
                   "isLValue": false,
                   "isPure": true,
                   "kind": "number",
                   "lValueRequested": false,
                   "nodeType": "Literal",
-                  "src": "265:1:0",
+                  "src": "282:1:0",
                   "subdenomination": null,
                   "typeDescriptions": {
                     "typeIdentifier": "t_rational_0_by_1",
@@ -911,18 +987,18 @@
               ],
               "expression": {
                 "argumentTypes": null,
-                "id": 14,
+                "id": 16,
                 "name": "position",
                 "nodeType": "Identifier",
                 "overloadedDeclarations": [],
                 "referencedDeclaration": 6,
-                "src": "247:8:0",
+                "src": "264:8:0",
                 "typeDescriptions": {
                   "typeIdentifier": "t_type$_t_struct$_position_$6_storage_ptr_$",
                   "typeString": "type(struct PositionTracking.position storage pointer)"
                 }
               },
-              "id": 17,
+              "id": 19,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -933,7 +1009,7 @@
                 "y"
               ],
               "nodeType": "FunctionCall",
-              "src": "247:21:0",
+              "src": "264:21:0",
               "typeDescriptions": {
                 "typeIdentifier": "t_struct$_position_$6_memory",
                 "typeString": "struct PositionTracking.position memory"
@@ -943,11 +1019,11 @@
           },
           {
             "constant": false,
-            "id": 22,
+            "id": 24,
             "name": "route",
             "nodeType": "VariableDeclaration",
-            "scope": 46,
-            "src": "275:35:0",
+            "scope": 49,
+            "src": "292:35:0",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -955,30 +1031,30 @@
               "typeString": "mapping(address => struct PositionTracking.position)"
             },
             "typeName": {
-              "id": 21,
+              "id": 23,
               "keyType": {
-                "id": 19,
+                "id": 21,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
-                "src": "284:7:0",
+                "src": "301:7:0",
                 "typeDescriptions": {
                   "typeIdentifier": "t_address",
                   "typeString": "address"
                 }
               },
               "nodeType": "Mapping",
-              "src": "275:29:0",
+              "src": "292:29:0",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_address_$_t_struct$_position_$6_storage_$",
                 "typeString": "mapping(address => struct PositionTracking.position)"
               },
               "valueType": {
                 "contractScope": null,
-                "id": 20,
+                "id": 22,
                 "name": "position",
                 "nodeType": "UserDefinedTypeName",
                 "referencedDeclaration": 6,
-                "src": "295:8:0",
+                "src": "312:8:0",
                 "typeDescriptions": {
                   "typeIdentifier": "t_struct$_position_$6_storage_ptr",
                   "typeString": "struct PositionTracking.position"
@@ -990,26 +1066,26 @@
           },
           {
             "body": {
-              "id": 44,
+              "id": 47,
               "nodeType": "Block",
-              "src": "391:99:0",
+              "src": "408:113:0",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 36,
+                    "id": 38,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 31,
+                      "id": 33,
                       "name": "currentPos",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 18,
-                      "src": "401:10:0",
+                      "referencedDeclaration": 20,
+                      "src": "418:10:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_struct$_position_$6_storage",
                         "typeString": "struct PositionTracking.position storage ref"
@@ -1022,12 +1098,12 @@
                       "arguments": [
                         {
                           "argumentTypes": null,
-                          "id": 33,
+                          "id": 35,
                           "name": "pos_x",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 24,
-                          "src": "427:5:0",
+                          "referencedDeclaration": 26,
+                          "src": "444:5:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -1035,12 +1111,12 @@
                         },
                         {
                           "argumentTypes": null,
-                          "id": 34,
+                          "id": 36,
                           "name": "pos_y",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 26,
-                          "src": "436:5:0",
+                          "referencedDeclaration": 28,
+                          "src": "453:5:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -1049,18 +1125,18 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 32,
+                        "id": 34,
                         "name": "position",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 6,
-                        "src": "414:8:0",
+                        "src": "431:8:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_type$_t_struct$_position_$6_storage_ptr_$",
                           "typeString": "type(struct PositionTracking.position storage pointer)"
                         }
                       },
-                      "id": 35,
+                      "id": 37,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1071,21 +1147,21 @@
                         "y"
                       ],
                       "nodeType": "FunctionCall",
-                      "src": "414:29:0",
+                      "src": "431:29:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_struct$_position_$6_memory",
                         "typeString": "struct PositionTracking.position memory"
                       }
                     },
-                    "src": "401:42:0",
+                    "src": "418:42:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_struct$_position_$6_storage",
                       "typeString": "struct PositionTracking.position storage ref"
                     }
                   },
-                  "id": 37,
+                  "id": 39,
                   "nodeType": "ExpressionStatement",
-                  "src": "401:42:0"
+                  "src": "418:42:0"
                 },
                 {
                   "eventCall": {
@@ -1095,18 +1171,18 @@
                         "argumentTypes": null,
                         "expression": {
                           "argumentTypes": null,
-                          "id": 39,
+                          "id": 41,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 61,
-                          "src": "465:3:0",
+                          "referencedDeclaration": 64,
+                          "src": "489:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
                           }
                         },
-                        "id": 40,
+                        "id": 42,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1114,7 +1190,7 @@
                         "memberName": "sender",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": null,
-                        "src": "465:10:0",
+                        "src": "489:10:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -1122,12 +1198,25 @@
                       },
                       {
                         "argumentTypes": null,
-                        "id": 41,
+                        "id": 43,
                         "name": "pos_x",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 24,
-                        "src": "477:5:0",
+                        "referencedDeclaration": 26,
+                        "src": "501:5:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 44,
+                        "name": "pos_y",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 28,
+                        "src": "508:5:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -1143,20 +1232,24 @@
                         {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
                         }
                       ],
-                      "id": 38,
+                      "id": 40,
                       "name": "PositionValue",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 12,
-                      "src": "451:13:0",
+                      "referencedDeclaration": 14,
+                      "src": "475:13:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_uint256_$returns$__$",
-                        "typeString": "function (address,uint256)"
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_uint256_$_t_uint256_$returns$__$",
+                        "typeString": "function (address,uint256,uint256)"
                       }
                     },
-                    "id": 42,
+                    "id": 45,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1164,20 +1257,20 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "451:32:0",
+                    "src": "475:39:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 43,
+                  "id": 46,
                   "nodeType": "EmitStatement",
-                  "src": "446:37:0"
+                  "src": "470:44:0"
                 }
               ]
             },
             "documentation": null,
-            "id": 45,
+            "id": 48,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -1185,42 +1278,16 @@
             "name": "setRandomPosition",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 27,
+              "id": 29,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 24,
+                  "id": 26,
                   "name": "pos_x",
                   "nodeType": "VariableDeclaration",
-                  "scope": 45,
-                  "src": "345:10:0",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  },
-                  "typeName": {
-                    "id": 23,
-                    "name": "uint",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "345:4:0",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 26,
-                  "name": "pos_y",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 45,
-                  "src": "357:10:0",
+                  "scope": 48,
+                  "src": "362:10:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1231,7 +1298,7 @@
                     "id": 25,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "357:4:0",
+                    "src": "362:4:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1239,22 +1306,14 @@
                   },
                   "value": null,
                   "visibility": "internal"
-                }
-              ],
-              "src": "344:24:0"
-            },
-            "payable": false,
-            "returnParameters": {
-              "id": 30,
-              "nodeType": "ParameterList",
-              "parameters": [
+                },
                 {
                   "constant": false,
-                  "id": 29,
-                  "name": "",
+                  "id": 28,
+                  "name": "pos_y",
                   "nodeType": "VariableDeclaration",
-                  "scope": 45,
-                  "src": "385:4:0",
+                  "scope": 48,
+                  "src": "374:10:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1262,10 +1321,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 28,
+                    "id": 27,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "385:4:0",
+                    "src": "374:4:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1275,20 +1334,54 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "384:6:0"
+              "src": "361:24:0"
             },
-            "scope": 46,
-            "src": "317:173:0",
+            "payable": false,
+            "returnParameters": {
+              "id": 32,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 31,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 48,
+                  "src": "402:4:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 30,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "402:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "401:6:0"
+            },
+            "scope": 49,
+            "src": "334:187:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 47,
-        "src": "62:430:0"
+        "scope": 50,
+        "src": "62:461:0"
       }
     ],
-    "src": "0:493:0"
+    "src": "0:524:0"
   },
   "compiler": {
     "name": "solc",
@@ -1298,8 +1391,8 @@
     "15": {
       "events": {},
       "links": {},
-      "address": "0x6975f78ad470d23faa48276a04d14a71313678a7",
-      "transactionHash": "0x63a65fe8180369d68dc5f508e1e2a3ee87d804b75ed202b662e2f457a75cfdb1"
+      "address": "0xade890a0534d0182e1b1fe945bafdbd28244d186",
+      "transactionHash": "0x17d47c79ee340f6a103fbccdb8b7261f0e1efb3cf4d29072d8debfa171e28847"
     },
     "4447": {
       "events": {},
@@ -1315,5 +1408,5 @@
     }
   },
   "schemaVersion": "2.0.1",
-  "updatedAt": "2018-10-01T14:52:51.565Z"
+  "updatedAt": "2018-10-04T12:21:20.798Z"
 }
