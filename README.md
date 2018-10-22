@@ -5,11 +5,11 @@
 ### Truffle
 
 An empty project space was created via `truffle init`.
-
 Then, all smart contracts where saved to the `contracts/` directory.
 
 Start a private chain or start Ganache:
 ``` sh
+cd tracking_chain/
 truffle develop
 ```
 
