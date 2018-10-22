@@ -17,7 +17,7 @@ Finally, compile and deploy our contracts and run the Ðapp.
 
 ``` sh
 truffle migrate --reset --network testNet
-node <name of Ðapp>
+node <name of the Ðapp>
 ```
 
 ### Debug
