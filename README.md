@@ -23,4 +23,4 @@ node <name of Ðapp>
 ### Debug
 
 If your Ðapp runs properly, you can observe it with `truffle debug`.
-By hitting `n` you can skip to the next line of your Ðapp. `v` gives you the current state of the variables of the smart contract that belongs to your Ðapp.
+By hitting `n` you can jump to the next line of your Ðapp. Pressing `v` gives you the current state of the variables of the smart contract that belongs to your Ðapp.
