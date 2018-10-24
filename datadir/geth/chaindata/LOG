@@ -1,16 +1,16 @@
 =============== Oct 24, 2018 (CEST) ===============
-09:29:26.887720 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
-09:29:26.894816 db@open opening
-09:29:26.895717 version@stat F·[] S·0B[] Sc·[]
-09:29:26.898393 db@janitor F·2 G·0
-09:29:26.898420 db@open done T·3.546317ms
+10:43:55.902051 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+10:43:55.915034 db@open opening
+10:43:55.915764 version@stat F·[] S·0B[] Sc·[]
+10:43:55.919500 db@janitor F·2 G·0
+10:43:55.919550 db@open done T·4.469858ms
 =============== Oct 24, 2018 (CEST) ===============
-09:29:28.976551 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
-09:29:28.976661 version@stat F·[] S·0B[] Sc·[]
-09:29:28.976670 db@open opening
-09:29:28.976706 journal@recovery F·1
-09:29:28.978239 journal@recovery recovering @1
-09:29:28.994462 memdb@flush created L0@2 N·14 S·924B "H\xe8&..\x01\x82\xfe,v8":"\xd9\xd1S..\x1a\xef\xe1,v4"
-09:29:28.996266 version@stat F·[1] S·924B[924B] Sc·[0.25]
-09:29:29.004831 db@janitor F·3 G·0
-09:29:29.004858 db@open done T·28.179244ms
+10:43:58.019821 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+10:43:58.019974 version@stat F·[] S·0B[] Sc·[]
+10:43:58.019987 db@open opening
+10:43:58.020038 journal@recovery F·1
+10:43:58.022166 journal@recovery recovering @1
+10:43:58.030848 memdb@flush created L0@2 N·14 S·901B "-\xb5\xf5..\x02\xae\xa3,v4":"\xc0\xd7u..\x89\x97?,v5"
+10:43:58.032504 version@stat F·[1] S·901B[901B] Sc·[0.25]
+10:43:58.042044 db@janitor F·3 G·0
+10:43:58.042101 db@open done T·22.075036ms
