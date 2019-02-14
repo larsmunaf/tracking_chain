@@ -1,4 +1,4 @@
-pragma solidity ^0.4.23;
+pragma solidity >0.4.23;
 //pragma experimental ABIEncoderV2;
 
 contract PositionTracking {
@@ -21,7 +21,7 @@ contract PositionTracking {
 
     string message = "position has changed";
 
-    function notify () public returns (string) {
+    function notify () public returns (string memory) {
         emit PositionValue(msg.sender, currentPos.x, currentPos.y);
         return message;
     }

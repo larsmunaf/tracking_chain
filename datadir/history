@@ -1,3 +1,0 @@
-miner.start()
-eth.getBalance(eth.accounts[0])
-eth.getBalance(eth.accounts[1])

@@ -26,7 +26,8 @@ module.exports = {
       			port: 8545,
       			network_id: "*",
 			password: "bla",
-			gas: 1000000
+			gas: 1000000,
+			gasPrice: 0
 		}
-    }
+  }
 };
